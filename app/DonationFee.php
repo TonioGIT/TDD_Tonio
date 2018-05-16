@@ -53,6 +53,13 @@ class DonationFee
     public function getFixedAndCommissionFeeAmount()
     {
         $fixedAndCommissionFeeAmount = $this->getCommissionAmount() + self::fixedFee;
+
+        if ($fixedAndCommissionFeeAmount > 500)
+        {
+            $this->donation = $this->donation + ($fixedAndCommissionFeeAmount - 500);
+            $fixedAndCommissionFeeAmount = 500;
+        }
+
         return $fixedAndCommissionFeeAmount;
     }
 }
