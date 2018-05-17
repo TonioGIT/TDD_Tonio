@@ -25,6 +25,5 @@ class ProjectsTableSeeder extends Seeder
                 'created_at' => \Carbon\Carbon::now(),
             ]);
         }
-
     }
 }

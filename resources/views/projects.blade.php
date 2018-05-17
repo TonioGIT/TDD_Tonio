@@ -81,27 +81,27 @@
         {{--<div class="title m-b-md">--}}
         <div>
             <img src="http://cache.media.education.gouv.fr/image/mars2017/22/0/trousse_a_projets_2017-03-29_13-27-52_666_745220.jpg" width="400"/>
-            <h1>Liste des projets:</h1>
+            <h1>Liste des projets</h1>
         </div>
 
         <table>
             <thead>
             <tr>
-                <th>ID</th>
+                {{--<th>ID</th>--}}
                 <th>Project Name</th>
-                <th>Description</th>
-                <th>Date of creation</th>
-                <th>Author</th>
+                {{--<th>Description</th>--}}
+                {{--<th>Date of creation</th>--}}
+                {{--<th>Author</th>--}}
             </tr>
             </thead>
             <tbody>
                 @foreach($Projects as $project)
                     <tr>
-                    <td>{{$project->id}}</td>
+                    {{--<td>{{$project->id}}</td>--}}
                     <td>{{$project->project_name}}</td>
-                    <td>{{$project->description}}</td>
-                    <td>{{$project->date_of_creation}}</td>
-                    <td>{{$project->author}}</td>
+                    {{--<td>{{$project->description}}</td>--}}
+                    {{--<td>{{$project->date_of_creation}}</td>--}}
+                    {{--<td>{{$project->author}}</td>--}}
                     </tr>
                 @endforeach
             </tbody>
