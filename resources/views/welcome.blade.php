@@ -78,8 +78,11 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
+                {{--<div class="title m-b-md">--}}
+                <div>
+                    <img src="https://i.imgflip.com/xsdtv.jpg" width="400"/>
                     <h1>Liste des projets</h1>
+
                 </div>
 
 
