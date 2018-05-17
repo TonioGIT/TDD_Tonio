@@ -10,6 +10,8 @@ namespace Tests\Feature;
 
 
 use Tests\TestCase;
+use App\Project;
+
 
 class ProjectTest extends TestCase
 
@@ -26,9 +28,11 @@ class ProjectTest extends TestCase
         $response->assertSee('<h1>Liste des projets</h1>');
     }
 
-    public function test()
+    public function testProjectFactoryDbURL()
     {
-
+        $project = factory(Project::class)->create();
+        $response =$this->get('/projects');
+        $response->assertSee($project->project_name);
     }
 
 }
