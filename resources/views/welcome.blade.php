@@ -1,3 +1,5 @@
+{{--@extends('template')--}}
+
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -81,7 +83,11 @@
                 {{--<div class="title m-b-md">--}}
                 <div>
                     <img src="https://i.imgflip.com/xsdtv.jpg" width="400"/>
-                    <h1>Liste des projets</h1>
+                    {{--@section('titre')--}}
+
+                        <h1>Liste des projets</h1>
+
+                    {{--@endsection--}}
 
                 </div>
 

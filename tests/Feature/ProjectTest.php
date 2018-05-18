@@ -11,11 +11,14 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use App\Project;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 
 class ProjectTest extends TestCase
 
 {
+    use RefreshDatabase;
+
     public function testBasicTest()
     {
         $response = $this->get('/projects');
@@ -34,5 +37,4 @@ class ProjectTest extends TestCase
         $response =$this->get('/projects');
         $response->assertSee($project->project_name);
     }
-
 }
