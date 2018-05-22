@@ -19,8 +19,8 @@ class ProjectsController extends BaseController
         return view ('/projects', compact("Projects"));
     }
 
-//    public function getDetails($id) {
-//        $details = DB::select('select project_name, description, date_of_creation, author from boissons WHERE id=?', [$id]);
-//        return view ('projects/projectsedit', ["boisson"=>$details[0]]);
-//    }
+    public function getDetails($id) {
+        $details = DB::select('select * from projects WHERE id=?', [$id]);
+        return view ('/projectsedit', ["project"=>$details[0]]);
+    }
 }

@@ -104,7 +104,7 @@
                     <tr>
                     {{--<td>{{$project->id}}</td>--}}
                     <td>{{$project->project_name}}</td>
-                    <td><a href="/boissonsedit/{{$boisson->id_boissons}}">détails</a></td>
+                    <td><a href="/projectsedit/{{$project->id}}">détails</a></td>
                     {{--<td>{{$project->description}}</td>--}}
                     {{--<td>{{$project->date_of_creation}}</td>--}}
                     {{--<td>{{$project->author}}</td>--}}
@@ -112,6 +112,8 @@
                 @endforeach
             </tbody>
         </table>
+        <br>
+        <a href="{{ url('/') }}">Home</a>
 
         {{--<div class="links">--}}
             {{--<a href="/projects">Projets</a>--}}

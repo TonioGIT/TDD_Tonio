@@ -20,3 +20,5 @@ Route::get('/', function () {
 //});
 
 Route::get('/projects', 'ProjectsController@getProjects' );
+
+Route::get('/projectsedit/{id}', 'ProjectsController@getDetails');

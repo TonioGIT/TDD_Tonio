@@ -83,43 +83,24 @@
             <img src="http://cache.media.education.gouv.fr/image/mars2017/22/0/trousse_a_projets_2017-03-29_13-27-52_666_745220.jpg" width="400"/>
             {{--@section('titre')--}}
 
-                <h1>Liste des projets</h1>
+                <h1>Détails du projet:</h1>
 
             {{--@endsection--}}
 
         </div>
+        <br>
+        <div>
+            <h3>Nom du projet: {{$project->project_name}}</h3>
+            <h3>Description du projet: {{$project->description}}</h3>
+            <h3>Date de création du projet: {{$project->date_of_creation}}</h3>
+            <h3>Auteur du projet: {{$project->author}}</h3>
+            <br>
+            <a href="{{ url('/projects') }}">Liste des projets</a>
+            <br>
+            <br>
+            <a href="{{ url('/') }}">Home</a>
+        </div>
 
-        <table>
-            <thead>
-            <tr>
-                {{--<th>ID</th>--}}
-                <th>Project Name</th>
-                <th>EDIT</th>
-                {{--<th>Date of creation</th>--}}
-                {{--<th>Author</th>--}}
-            </tr>
-            </thead>
-            <tbody>
-                @foreach($Projects as $project)
-                    <tr>
-                    {{--<td>{{$project->id}}</td>--}}
-                    <td>{{$project->project_name}}</td>
-                    <td><a href="/boissonsedit/{{$boisson->id_boissons}}">détails</a></td>
-                    {{--<td>{{$project->description}}</td>--}}
-                    {{--<td>{{$project->date_of_creation}}</td>--}}
-                    {{--<td>{{$project->author}}</td>--}}
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-
-        {{--<div class="links">--}}
-            {{--<a href="/projects">Projets</a>--}}
-            {{--<a href="https://laracasts.com">Laracasts</a>--}}
-            {{--<a href="https://laravel-news.com">News</a>--}}
-            {{--<a href="https://forge.laravel.com">Forge</a>--}}
-            {{--<a href="https://github.com/laravel/laravel">GitHub</a>--}}
-        {{--</div>--}}
     </div>
 </div>
 </body>
