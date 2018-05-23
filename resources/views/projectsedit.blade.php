@@ -94,6 +94,7 @@
             <h3>Description du projet: {{$project->description}}</h3>
             <h3>Date de création du projet: {{$project->date_of_creation}}</h3>
             <h3>Nom de l'auteur du projet: {{$project->user->name}}</h3>
+            <h3><a href="/projectmodif/{{$project->id}}">MODIFIER LE PROJET</a></h3>
             <br>
             <a href="{{ url('/projects') }}">Liste des projets</a>
             <br>

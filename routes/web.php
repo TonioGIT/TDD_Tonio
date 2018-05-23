@@ -19,6 +19,18 @@ Route::get('/', function () {
 //    return view ('projects');
 //});
 
+
+
+
+
 Route::get('/projects', 'ProjectsController@getProjects' );
 
 Route::get('/projectsedit/{id}', 'ProjectsController@getDetails');
+
+Route::get('/projectmodif/{id}')->middleware('auth');
+Route::post('/projectmodif/{id}', 'ProjectsController@publish')->middleware('auth');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

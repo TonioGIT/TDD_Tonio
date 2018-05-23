@@ -26,9 +26,16 @@ class ProjectsController extends BaseController
 //        $project = new Project();
 //        $user = $details->user->find($details->user_id);
 //        dump($user);
-
-
-
         return view ('/projectsedit', ["project"=>$details]);
     }
+
+//    public function publish(Request $request, $id)
+//    {
+//        $projects = Project::find($id);
+//        $projects->project_name = $request->input('project_name');
+//        $projects->description = $request->input('description');
+//        $projects->save();
+//        return redirect('/projectsedit');
+//    }
+
 }
