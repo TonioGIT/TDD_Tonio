@@ -93,7 +93,7 @@
             <h3>Nom du projet: {{$project->project_name}}</h3>
             <h3>Description du projet: {{$project->description}}</h3>
             <h3>Date de création du projet: {{$project->date_of_creation}}</h3>
-            <h3>Auteur du projet: {{$project->author}}</h3>
+            {{--<h3>Auteur du projet: {{$project->author}}</h3>--}}
             <br>
             <a href="{{ url('/projects') }}">Liste des projets</a>
             <br>

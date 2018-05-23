@@ -38,8 +38,6 @@ class ProjectTest extends TestCase
         $response->assertSee($project->project_name);
     }
 
-//    use RefreshDatabase;
-
     public function testProjectNameDetectedInDetailsPage()
     {
         $project = factory(Project::class)->create();
@@ -48,5 +46,7 @@ class ProjectTest extends TestCase
         $response = $this->get('/projectsedit/'.$project->id);
         $response->assertSee($project->project_name);
     }
+
+
 
 }
