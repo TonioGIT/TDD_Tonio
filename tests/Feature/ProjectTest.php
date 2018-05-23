@@ -11,6 +11,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use App\Project;
+use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 
@@ -47,6 +48,35 @@ class ProjectTest extends TestCase
         $response->assertSee($project->project_name);
     }
 
+    public function testRelationBetweenModelsProjectUser()
+    {
+        $user = factory(User::class)->create();
+        $project = factory(Project::class, 7)->create(['user_id' => $user->id]);
+        $this->assertInstanceOf('\Illuminate\Database\Eloquent\Collection', $user->projects);
+
+        // compter le nombre de projets (je dois en avoir 7)
+        $this->assertEquals(7, count($user->projects));
+
+        // $user->projects[0] -> je dois avoir une instance de Project
+        $this->assertInstanceOf(Project::class, $user->projects[0]);
+    }
+
+    public function testProjectHasAUser()
+    {
+        $project = factory(Project::class)->create();
+        $this->assertInstanceOf(User::class, $project->user);
+    }
+
+    public function testAffichageAuthorNameInDetailsPage()
+    {
+        $user = factory(User::class)->create();
+        $project = factory(Project::class)->create(['user_id' => $user->id]);
+//        $details = Project::find($user->id);
+//        $response = $details->user->find($details->user_id);
+//        $this->assertEquals($user->name, $response->name);
 
 
+        $this->assertEquals($user->name, $project->user->name);
+//        dd($user, $response);
+    }
 }

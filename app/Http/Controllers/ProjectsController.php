@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Project;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
@@ -20,7 +21,14 @@ class ProjectsController extends BaseController
     }
 
     public function getDetails($id) {
-        $details = DB::select('select * from projects WHERE id=?', [$id]);
-        return view ('/projectsedit', ["project"=>$details[0]]);
+//        $details = DB::select('select * from projects WHERE id=?', [$id]);
+        $details = Project::find($id);
+//        $project = new Project();
+//        $user = $details->user->find($details->user_id);
+//        dump($user);
+
+
+
+        return view ('/projectsedit', ["project"=>$details]);
     }
 }

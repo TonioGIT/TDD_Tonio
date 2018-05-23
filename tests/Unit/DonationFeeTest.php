@@ -39,7 +39,7 @@ class DonationFeeTest extends TestCase
         $actual = $donationFees->getAmountCollected();
 
         // Alors la valeur du montant perçu par le porteur du projet doit être de 180.
-        $expected = 130;
+        $expected = 200 - 50 - (200/100 * 10);
         $this->assertEquals($expected, $actual);
     }
 
