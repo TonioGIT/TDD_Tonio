@@ -79,4 +79,11 @@ class ProjectTest extends TestCase
         $this->assertEquals($user->name, $project->user->name);
 //        dd($user, $response);
     }
+
+    public function testNoAccessToModificationPageIfNotAuth()
+    {
+        $user = factory(User::class)->create();
+
+    }
+
 }

@@ -29,6 +29,15 @@ class ProjectsController extends BaseController
         return view ('/projectsedit', ["project"=>$details]);
     }
 
+    public function getDetails2($id) {
+//        $details = DB::select('select * from projects WHERE id=?', [$id]);
+        $details = Project::find($id);
+//        $project = new Project();
+//        $user = $details->user->find($details->user_id);
+//        dump($user);
+        return view ('/projectmodif', ["project"=>$details]);
+    }
+
 //    public function publish(Request $request, $id)
 //    {
 //        $projects = Project::find($id);
