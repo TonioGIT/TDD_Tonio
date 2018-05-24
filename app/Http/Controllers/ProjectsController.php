@@ -45,13 +45,13 @@ class ProjectsController extends BaseController
 //
 //    }
 
-//    public function publish(Request $request, $id)
-//    {
-//        $projects = Project::find($id);
-//        $projects->project_name = $request->input('project_name');
-//        $projects->description = $request->input('description');
-//        $projects->save();
-//        return redirect('/projectsedit');
-//    }
+    public function publish(Request $request, $id)
+    {
+        $projects = Project::find($id);
+        $projects->project_name = $request->input('project_name');
+        $projects->description = $request->input('description');
+        $projects->save();
+        return redirect()->route('edit', ['id' => $projects->id]);
+    }
 
 }

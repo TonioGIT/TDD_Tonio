@@ -25,13 +25,15 @@ Route::get('/', function () {
 
 Route::get('/projects', 'ProjectsController@getProjects' );
 
-Route::get('/projectsedit/{id}', 'ProjectsController@getDetails');
+Route::get('/projectsedit/{id}', 'ProjectsController@getDetails')->name('edit');
 
 Route::get('/projectmodif/{id}', 'ProjectsController@getDetails2')->middleware('auth');
 //Route::get('/projectmodif/{id}', 'ProjectsController@checkUserIsProjectOwner')->middleware('auth');
 
 Route::post('/projectmodif/{id}', 'ProjectsController@publish')->middleware('auth');
 
+
+Route::post('/projectcreate/')->middleware('auth');
 
 Auth::routes();
 

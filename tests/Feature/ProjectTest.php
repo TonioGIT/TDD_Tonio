@@ -75,7 +75,6 @@ class ProjectTest extends TestCase
 //        $response = $details->user->find($details->user_id);
 //        $this->assertEquals($user->name, $response->name);
 
-
         $this->assertEquals($user->name, $project->user->name);
 //        dd($user, $response);
     }

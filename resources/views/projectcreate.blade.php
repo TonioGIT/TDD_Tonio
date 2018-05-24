@@ -92,7 +92,7 @@
         <div>
 
             <?php
-            if ((Auth::user()->name) !== $project->user->name) {
+            if ((Auth::user()->id) !== $project->user->id) {
 
                 echo "<h1>Vous nêtes pas lauteur de ce projet, impossible de le modifier !!!</h1>";
 //                echo "<br>";
@@ -104,25 +104,7 @@
                 echo "<h3>Bonjour</h3>";
             ?>
 
-                <h2>{{Auth::user()->name}}</h2>
-
-                <div class="panel-body">
-                    <form class="" action="/projectmodif/{{$project->id}}" method="post">
-                        {{ csrf_field() }}
-                        <div class="form-group">
-                            <label for="code">Nouveau nom du projet:</label>
-                            <input type="text" class="form-control" name="project_name" value="{{$project->project_name}}">
-                        </div>
-                        <div class="form-group">
-                            <label for="nom">Nouvelle description du projet:</label>
-                            <input type="text" class="form-control" name="description" value="{{$project->description}}">
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">VALID</button>
-                    </form>
-                </div>
-
-
+            <h2>{{Auth::user()->name}}</h2>
             <h3>Nom du projet: {{$project->project_name}}</h3>
             <h3>Description du projet: {{$project->description}}</h3>
             <h3>Date de création du projet: {{$project->date_of_creation}}</h3>
