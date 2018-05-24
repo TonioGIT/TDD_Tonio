@@ -80,10 +80,16 @@ class ProjectTest extends TestCase
 //        dd($user, $response);
     }
 
-    public function testNoAccessToModificationPageIfNotAuth()
+    public function testNoAccessToModificationPageIfNotAuthor()
     {
+        // Etant donné un projet et un user.
+        $project = factory(Project::class)->create();
         $user = factory(User::class)->create();
 
-    }
+        // Lorsqu'on essaye d'aller sur la page projectmodif avec l'id du projet et le user authentifié.
+        $response = $this->actingAs($user)->get('/projectmodif/'.$project->id);
 
+        // Alors on doit voir la phrase 'Vous nêtes pas lauteur de ce projet, impossible de le modifier !!!'.
+        $response->assertSee('Vous nêtes pas lauteur de ce projet, impossible de le modifier !!!');
+    }
 }

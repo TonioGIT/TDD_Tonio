@@ -28,6 +28,8 @@ Route::get('/projects', 'ProjectsController@getProjects' );
 Route::get('/projectsedit/{id}', 'ProjectsController@getDetails');
 
 Route::get('/projectmodif/{id}', 'ProjectsController@getDetails2')->middleware('auth');
+//Route::get('/projectmodif/{id}', 'ProjectsController@checkUserIsProjectOwner')->middleware('auth');
+
 Route::post('/projectmodif/{id}', 'ProjectsController@publish')->middleware('auth');
 
 

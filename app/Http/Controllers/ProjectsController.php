@@ -38,6 +38,13 @@ class ProjectsController extends BaseController
         return view ('/projectmodif', ["project"=>$details]);
     }
 
+//    public function checkUserIsProjectOwner($id)
+//    {
+//
+//        return view ('/projectmodif', ["project"=>$details]);
+//
+//    }
+
 //    public function publish(Request $request, $id)
 //    {
 //        $projects = Project::find($id);
