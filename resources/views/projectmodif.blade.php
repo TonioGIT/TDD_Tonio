@@ -91,20 +91,24 @@
         <br>
         <div>
 
-            <?php
-            if ((Auth::user()->name) !== $project->user->name) {
+<!--            --><?php
+//            if ((Auth::user()->name) !== $project->user->name) {
+//
+//                echo "<h1>Vous nêtes pas lauteur de ce projet, impossible de le modifier !!!</h1>";
+////                echo "<br>";
+////                echo "<br>";
+////                echo "<a href=/projects>Liste des projets</a>";
+////                echo "<br>";
+////                echo "<a href=/>Home</a>";
+//            } else {
+//                echo "<h3>Bonjour</h3>";
+//            ?>
+            @isset($is_error)
+                <h1>Impossible de mofifier le projet, vous n'en n'êtes pas l'auteur !!!</h1>
+            @endisset
 
-                echo "<h1>Vous nêtes pas lauteur de ce projet, impossible de le modifier !!!</h1>";
-//                echo "<br>";
-//                echo "<br>";
-//                echo "<a href=/projects>Liste des projets</a>";
-//                echo "<br>";
-//                echo "<a href=/>Home</a>";
-            } else {
-                echo "<h3>Bonjour</h3>";
-            ?>
-
-                <h2>{{Auth::user()->name}}</h2>
+            <h3>Bonjour</h3>
+                        <h2>{{Auth::user()->name}}</h2>
 
                 <div class="panel-body">
                     <form class="" action="/projectmodif/{{$project->id}}" method="post">
@@ -128,9 +132,9 @@
             <h3>Date de création du projet: {{$project->date_of_creation}}</h3>
             <h3>Nom de l'auteur du projet: {{$project->user->name}}</h3>
             <br>
-            <?php
-            }
-                ?>
+<!--            --><?php
+//            }
+//                ?>
             <a href="{{ url('/projects') }}">Liste des projets</a>
             <br>
             <br>

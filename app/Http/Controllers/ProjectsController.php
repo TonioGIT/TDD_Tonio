@@ -47,11 +47,25 @@ class ProjectsController extends BaseController
 
     public function publish(Request $request, $id)
     {
+        $details = Project::find($id);
         $projects = Project::find($id);
-        $projects->project_name = $request->input('project_name');
-        $projects->description = $request->input('description');
-        $projects->save();
-        return redirect()->route('edit', ['id' => $projects->id]);
+        $userId = \Auth::user()->id;
+
+        // Controller que le User Authentifié et = au user du projet.
+        if (($userId) == $projects->user->id) {
+
+            $projects->project_name = $request->input('project_name');
+            $projects->description = $request->input('description');
+            $projects->save();
+            return redirect()->route('edit', ['id' => $projects->id]);
+
+        }
+        else {
+            return view ('/projectmodif', [
+                "project" => $details,
+                'is_error' => true
+            ]);
+        }
     }
 
 }
